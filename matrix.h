@@ -219,8 +219,8 @@ extern   int bd_free(BAND *);
 
 /* Entry level access to data structures */
 /* routines to check indexes */
-#define	m_chk_idx(A,i,j)	((i)>=0 && (i)<(A)->m && (j)>=0 && (j)<=(A)->n)
-#define	v_chk_idx(x,i)		((i)>=0 && (i)<(x)->dim)
+#define	m_chk_idx(A,i,j)	((i)<(A)->m && (j)<=(A)->n)
+#define	v_chk_idx(x,i)		((i)<(x)->dim)
 #define	bd_chk_idx(A,i,j)	((i)>=max(0,(j)-(A)->ub) && \
 		(j)>=max(0,(i)-(A)->lb) && (i)<(A)->mat->n && (j)<(A)->mat->n)
 

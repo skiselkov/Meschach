@@ -10,7 +10,7 @@ INCLUDE(CheckHeaderSTDC)
 #### configure.in part #########
 ####################################
 #Add definitions
-check_header_stdc()
+#check_header_stdc()
 #Check local prototypes
 CHECK_CXX_SOURCE_COMPILES("extern int test (int i, double x);" HAVE_PROTOTYPES)
 CHECK_CXX_SOURCE_COMPILES("struct s1 {int (*f) (int a);};\nstruct s2 {int (*f) (double a);};" HAVE_PROTOTYPES_IN_STRUCT)
@@ -20,7 +20,7 @@ CHECK_CXX_SOURCE_COMPILES("#include <stdio.h>\n#ifdef __STDC__\n#include <stdlib
 CHECK_INCLUDE_FILES(memory.h HAVE_MEMORY_H)
 CHECK_INCLUDE_FILES(malloc.h HAVE_MALLOC_H)
 CHECK_INCLUDE_FILES(complex.h HAVE_COMPLEX_H)
-CHECK_INCLUDE_FILES(varargs.h HAVE_VARARGS_H)
+#CHECK_INCLUDE_FILES(varargs.h HAVE_VARARGS_H)
 
 #Compile Options
 OPTION(COMPLEX_OPTION "incorporate complex functions" OFF)
@@ -46,7 +46,7 @@ CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/machine.h.in ${CMAKE_CURRENT_SOURCE_D
 #### makefile.in part #########
 ####################################
 
-add_definitions("-O -DINCLUDE_DIRECTORIES=${CMAKE_REQUIRED_INCLUDES}")
+add_definitions("-O2 -DINCLUDE_DIRECTORIES=${CMAKE_REQUIRED_INCLUDES} -DSTDC_HEADERS")
 
 set(HBASE err.h meminfo.h machine.h matrix.h)
 

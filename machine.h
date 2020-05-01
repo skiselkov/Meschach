@@ -21,7 +21,7 @@
 #define HAVE_MEMORY_H
 #define HAVE_COMPLEX_H
 #define HAVE_MALLOC_H
-#define STDC_HEADERS
+/* #undef STDC_HEADERS */
 /* #undef HAVE_BCOPY */
 /* #undef HAVE_BZERO */
 /* #undef CHAR0ISDBL0 */
@@ -62,8 +62,8 @@
 #endif /* HAVE_PROTOTYPES_IN_STRUCT */
 
 /* for basic or larger versions */
-#define COMPLEX 1
-#define SPARSE  1
+/* #undef COMPLEX */
+/* #undef SPARSE */
 
 /* for loop unrolling */
 /* #undef VUNROLL */
@@ -206,12 +206,6 @@
 #endif
 #endif
 ********************/
-
-
-#ifndef MAX_INT
-#include <limits.h>
-#define	MAX_INT INT_MAX
-#endif
 
 #define	M_MAX_INT MAX_INT
 #ifdef	M_MAX_INT
