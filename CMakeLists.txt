@@ -83,4 +83,7 @@ endif(COMPLEX_OPTION)
 
 add_library(meschach ${sources_files})
 
-
+# Needed for .so linking on Linux
+if(UNIX AND NOT APPLE)
+	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
+endif()
