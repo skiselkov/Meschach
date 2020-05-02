@@ -46,7 +46,7 @@ CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/machine.h.in ${CMAKE_CURRENT_SOURCE_D
 #### makefile.in part #########
 ####################################
 
-add_definitions("-O2 -DINCLUDE_DIRECTORIES=${CMAKE_REQUIRED_INCLUDES} -DSTDC_HEADERS")
+add_definitions("-O2 -g -DINCLUDE_DIRECTORIES=${CMAKE_REQUIRED_INCLUDES} -DSTDC_HEADERS -DTHREADSAFE")
 
 set(HBASE err.h meminfo.h machine.h matrix.h)
 
